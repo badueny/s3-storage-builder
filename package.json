@@ -1,5 +1,5 @@
 {
-  "name": "storage-builder-s3",
+  "name": "s3-storage-builder",
   "version": "1.0.0",
   "description": "S3 driver for storage-builder",
   "main": "src/index.js",
