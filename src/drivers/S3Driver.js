@@ -44,7 +44,8 @@ class S3Driver extends DriverInterface {
                 config.region || 'us-east-1',
 
             forcePathStyle:
-                config.forcePathStyle ?? true,
+                config.forcePathStyle === true ||
+                config.forcePathStyle === 'true',
 
             credentials: {
                 accessKeyId:
