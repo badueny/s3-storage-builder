@@ -17,44 +17,6 @@ MINIO_URL=http://127.0.0.1:9000/uploads
 AWS_BUCKET=prod-files
 MINIO_BUCKET=local-files
 ```
-
-
-###config App
-```js
-require('dotenv').config();
-
-module.exports = {
-
-    default: process.env.STORAGE_DISK || 'minio',
-
-    disks: {
-
-        minio: {
-
-            driver: 's3',
-
-            endpoint: process.env.MINIO_ENDPOINT,
-
-            region: process.env.MINIO_REGION,
-
-            bucket: process.env.MINIO_BUCKET,
-
-            accessKeyId: process.env.MINIO_ACCESS_KEY,
-
-            secretAccessKey: process.env.MINIO_SECRET_KEY,
-
-            forcePathStyle:
-                process.env.MINIO_FORCE_PATH_STYLE === 'true',
-
-            url: process.env.MINIO_URL
-
-        }
-
-    }
-
-};
-```
-
 ---
 
 ### call dari app
@@ -82,7 +44,6 @@ const storage = new S3Driver({
 
 });
 ```
-
 ---
 
 ### Pemakaian
