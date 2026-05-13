@@ -101,7 +101,7 @@ await storage.upload(
     }
 );
 ```
-
+#### Direct Upload
 ```js
 await Storage
     .disk('minio')
