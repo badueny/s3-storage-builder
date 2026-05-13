@@ -8,8 +8,8 @@ const {
 
 const DriverInterface = require('../contracts/DriverInterface');
 
-const multipartUpload = require('../MultipartUpload');
-const temporaryUrl = require('../TemporaryUrl');
+const multipartUpload = require('../services/MultipartUpload');
+const temporaryUrl = require('../services/TemporaryUrl');
 
 const normalizeFile = require('../helpers/normalizeFile');
 const randomName = require('../helpers/randomName');
