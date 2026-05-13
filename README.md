@@ -23,7 +23,10 @@ MINIO_BUCKET=local-files
 ```js
 require('dotenv').config();
 
-const S3Driver = require('s3-storage-builder');
+const {
+    S3Driver,
+    LocalDriver
+} = require('s3-storage-builder');
 
 const storage = new S3Driver({
 
