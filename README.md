@@ -153,3 +153,13 @@ url:
     process.env.MINIO_URL ||
     `${process.env.MINIO_ENDPOINT}/${process.env.MINIO_BUCKET}`
 ```
+
+## ✅ Instalasi
+
+```bash
+npm install github:badueny/s3-storage-builder
+```
+atau
+```bash
+npm install git+https://github.com/badueny/s3-storage-builder.git
+```
