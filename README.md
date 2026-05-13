@@ -59,14 +59,28 @@ module.exports = {
 
 ### call dari app
 ```js
-const Storage = require('storage-builder');
-const S3Driver = require('storage-builder-s3');
+require('dotenv').config();
 
-const storageConfig = require('./config/storage');
+const S3Driver = require('s3-storage-builder');
 
-Storage.extend('s3', S3Driver);
+const storage = new S3Driver({
 
-Storage.config(storageConfig);
+    endpoint: process.env.MINIO_ENDPOINT,
+
+    region: process.env.MINIO_REGION,
+
+    bucket: process.env.MINIO_BUCKET,
+
+    accessKeyId: process.env.MINIO_ACCESS_KEY,
+
+    secretAccessKey: process.env.MINIO_SECRET_KEY,
+
+    forcePathStyle:
+        process.env.MINIO_FORCE_PATH_STYLE === 'true',
+
+    url: process.env.MINIO_URL
+
+});
 ```
 
 ---
