@@ -72,6 +72,36 @@ Storage.config(storageConfig);
 ---
 
 ### Pemakaian
+
+#### Upload File
+```js
+await storage.upload(
+    './example.jpg',
+    {
+        folder: 'images',
+        randomName: true
+    }
+);
+```
+#### Upload Buffer
+```js
+await storage.put(
+    'files/test.txt',
+    Buffer.from('Hello World'),
+    'text/plain'
+);
+```
+#### Upload Sream
+```js
+await storage.upload(
+    req.file,
+    {
+        folder: 'videos',
+        randomName: true
+    }
+);
+```
+
 ```js
 await Storage
     .disk('minio')
@@ -80,6 +110,43 @@ await Storage
     .upload(req.file);
 ```
 
+#### Get Object
+```js
+const file = await storage.get(
+    'images/test.jpg'
+);
+```
+#### Delete Object
+```js
+await storage.delete(
+    'images/test.jpg'
+);
+```
+#### Check File Exist
+```js
+const exists = await storage.exists(
+    'images/test.jpg'
+);
+```
+#### Generate URL
+```js
+const url = storage.url(
+    'images/test.jpg'
+);
+```
+#### Temporary URL
+```js
+const url = await storage.temporaryUrl(
+    'images/test.jpg',
+    3600
+);
+```
+#### Health Check
+```js
+const ok = await storage.healthCheck();
+```
+
+---
 ### feedback URL
 ```js
 url:
